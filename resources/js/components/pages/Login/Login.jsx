@@ -6,6 +6,7 @@ import { useRef, useState, useEffect, useContext } from "react";
 import Swal from "sweetalert2";
 import { USER_REGEX, PWD_REGEX } from "./Regex";
 import AuthContext from "../../auth/AuthProvider";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
     const userRef = useRef();
@@ -49,7 +50,7 @@ const Login = () => {
                     position: "center",
                     icon: "success",
                     title: "Hurray!!",
-                    text: "Mail sa odoslal spravne",
+                    text: "Uspesne prihlasenie",
                     showConfirmButton: false,
                     timer: 1500,
                 });
@@ -78,9 +79,7 @@ const Login = () => {
         <>
             {success ? (
                 <section>
-                    <h1>You are logged in!</h1>
-                    <br />
-                    <p>{/* <a href="#">Go to Home</a> */}</p>
+                    <Navigate to="/nastavenia" />
                 </section>
             ) : (
                 <div className="login-body">

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/style/admin/Nastavenia_style.css";
+//import "../../assets/style/admin/Nastavenia_style.css";
 
 const Nastavenia = () => {
     return (

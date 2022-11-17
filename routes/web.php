@@ -25,4 +25,4 @@ Route::post('formSubmit', 'App\Http\Controllers\ContactController@submit');
 
 //Login
 Route::post('/login', 'App\Http\Controllers\LoginController@store');
-//Route::get('/dashboard', '');
+Route::get('/nastavenia', 'App\Http\Controllers\AdminController@show')->name('nastavenia');

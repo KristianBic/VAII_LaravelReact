@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +15,6 @@ class LoginController extends Controller
 
         if (Auth::attempt($request->validated())) {
             $request->session()->regenerate();
-            //return redirect()->intended('dashboard');
             return response()->json([
                 'message' => 'Logged Successfully!!'
             ]);
