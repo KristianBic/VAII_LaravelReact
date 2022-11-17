@@ -5,42 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\LoginRequest;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
-use Inertia\Response;;
 
 class LoginController extends Controller
 {
-    public function create(): Response
+    public function store(LoginRequest $request)
     {
-        return Inertia::render('Login/Login');
-    }
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
 
-    public function store(Request $request)
-    {
-        $credentials = $request->validate([
-            'name' => 'required',
-            'password' => 'required',
-        ]);
-
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($request->validated())) {
+            $request->session()->regenerate();
+            //return redirect()->intended('dashboard');
             return response()->json([
-                'message' => 'Product Updated Successfully!!'
+                'message' => 'Logged Successfully!!'
             ]);
-
-            $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+        } else {
+            return response()->json([
+                'message' => 'Logged Unsuccessfully!!'
+            ]);
         }
-
-
-        /*
-        if (Auth::attempt($request->validate())) {
-            $request->session()->regenerate();
-            return redirect()->intended('dashboard');
-        }
-
-        return back()->withErrors(['name' => 'Doesnt match']);
-        */
     }
 }

@@ -6,6 +6,7 @@ import Contact from "./pages/Contact/Contact";
 import Login from "../components/pages/Login/Login";
 import Home from "../components/pages/Home/Home";
 import References from "./pages/References/References";
+import AdminNastavenia from "./pages/admin/Nastavenia";
 
 import ScrollToTop from "../components/ui/ScrollToTop";
 
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/kontakt" element={<Contact />} />
                     <Route path="/referencie" element={<References />} />
+                    <Route path="/nastavenia" element={<AdminNastavenia />} />
                 </Routes>
             </ScrollToTop>
         </div>

@@ -1115,6 +1115,33 @@ p {
   box-shadow: 2px 2px #a1bfff;
   outline: none;
   transition: 0.3s;
+  /*
+  &::placeholder {
+      letter-spacing: 0.5px;
+      font-family: $fontText;
+      font-size: 0.75rem;
+      color: #dadada;
+  }
+  &:optional {
+      border-color: gray;
+  }
+  &:required:valid {
+      border-color: green;
+  }
+  &:invalid {
+      border-color: red;
+  }
+  &:required:focus:valid {
+      background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg")
+          no-repeat 95% 50% lightgreen;
+      background-size: 25px;
+  }
+  &:focus:invalid {
+      background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg")
+          no-repeat 95% 50% lightsalmon;
+      background-size: 25px;
+  }
+  */
 }
 @media only screen and (max-width: 768px) {
   .login-body .admin-container .admin-container-right input {
@@ -1133,24 +1160,6 @@ p {
 }
 .login-body .admin-container .admin-container-right input:focus::placeholder {
   visibility: hidden;
-}
-.login-body .admin-container .admin-container-right input::-moz-placeholder {
-  letter-spacing: 0.5px;
-  font-family: "Inter";
-  font-size: 0.75rem;
-  color: #dadada;
-}
-.login-body .admin-container .admin-container-right input:-ms-input-placeholder {
-  letter-spacing: 0.5px;
-  font-family: "Inter";
-  font-size: 0.75rem;
-  color: #dadada;
-}
-.login-body .admin-container .admin-container-right input::placeholder {
-  letter-spacing: 0.5px;
-  font-family: "Inter";
-  font-size: 0.75rem;
-  color: #dadada;
 }
 .login-body .admin-container .admin-container-right .button {
   font-weight: 300;

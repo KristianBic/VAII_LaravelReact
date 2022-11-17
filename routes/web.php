@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,5 @@ Route::get('/{path?}', function () {
 Route::post('formSubmit', 'App\Http\Controllers\ContactController@submit');
 
 //Login
-Route::get('/login', 'App\Http\Controllers\LoginController@create')->name('login');
 Route::post('/login', 'App\Http\Controllers\LoginController@store');
 //Route::get('/dashboard', '');
